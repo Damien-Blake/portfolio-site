@@ -138,7 +138,10 @@ nav{
     /* height: 70vh; */
 }
 .section1 aside{
-    margin-top: 2.8%;
+    /* margin-top: 2.8%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .section1 aside img{
     border-radius: 100px;
@@ -161,15 +164,20 @@ nav{
     color: rgb(53, 20, 20);
 }
 
+.section2 h2{
+    margin-top: 7vh;
+    color:rgb(53, 20, 20);
+}
 .flex-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    gap: 10%;
     margin: 20px;
     padding: 0 9%;
 }
 
 .table-container {
-    width: 49%;
+    width: 40%;
     background-color: #f9f9f9;
     border-radius: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -203,30 +211,46 @@ section2{
     padding: 40px;
     background-color: #f2f2f2;
 }
-/* .section2{
-    display: flex;
-    justify-content: space-evenly;
-    height: 80vh;
-    margin-bottom: 5vh;
-}
-table{
-    margin: 4% auto;
-    height: 60vh;
-    width: 25vw;
-}
-table, th, td {
-    border: 0.2vw solid black;
-    border-collapse: collapse;
-    color: rgb(53, 20, 20);
-    padding: 15px;
+
+/* Define the animation */
+@keyframes slideIn {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
   }
-tr{
-    height: 7vh;
-    background-color: rgb(166, 125, 75);
-}
-tr:hover{
-    background-color: #b6b7b5;
-} */
+  
+  /* Apply the animation to the tables */
+  .section2 .table-container {
+    width: 50%;
+    overflow: hidden;
+  }
+  
+  .section2 .table-container:first-child {
+    float: left;
+  }
+  
+  .section2 .table-container:last-child {
+    float: right;
+  }
+  
+  .section2 .table-container table {
+    width: 100%;
+    
+  }
+  
+  /* Apply the animation to the tables when the section is hovered */
+  .section2:hover .table-container:first-child table {
+    animation: slideIn 1s ease-in-out;
+    animation-delay: 0s;
+  }
+  
+  .section2:hover .table-container:last-child table {
+    animation: slideIn 1s ease-in-out;
+    animation-delay: 0.5s;
+  }
 
 footer{
     height: 30vh;
